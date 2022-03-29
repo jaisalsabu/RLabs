@@ -34,3 +34,13 @@ install.packages("VIM")
 library(VIM)
 missing_values <- aggr(managers_data, prop =FALSE, numbers= FALSE)
 summary(missing_values)
+
+new_managers_data <- read.csv("MoreData.csv", na="")
+new_managers_data
+str(new_managers_data)
+
+extracted_data <- subset(new_managers_data,select=c(Date,Country,Gender,Age,Q1,Q2,Q3,Q4,Q5))
+extracted_data
+str(extracted_data)
+new_data <- rbind(managers_data[2:10],extracted_data)
+new_data

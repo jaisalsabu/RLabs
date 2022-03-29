@@ -42,7 +42,7 @@ str(managers_data.df)
 head(managers_data.df)
 #create a summary column with total of Q1,Q2,Q3,Q4,Q5 and a new ccolumn with all 
 managers_data.df$mean_col <- rowMeans(managers_data.df[ , c(5,6,7,8,9)], na.rm=TRUE)
-#anothermethod for mean
+#another method for mean
 #managers_data.df$summary <- rowMeans(x=managers_data.df[5:9])
 managers_data.df$summary_col <- managers_data.df$Q1 + managers_data.df$Q2 + managers_data.df$Q3 + managers_data.df$Q4 + managers_data.df$Q5
 #another way for summary
