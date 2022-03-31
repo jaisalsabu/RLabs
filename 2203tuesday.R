@@ -1,3 +1,4 @@
+#create vectors to be added to the dataframe
 date_col <- c("10/15/18","01/11/18","10/21/18","10/28/18","05/01/18")
 country_col <- c("US","US","IRL","IRL","IRL")
 gender_col <- c("M","F","F","M","F")
@@ -38,9 +39,13 @@ age_cate <- factor(managers_data.df$age_class, order=TRUE, levels = c("Young", "
 #replace managers age_class with the new variable
 managers_data.df$age_class <- age_cate
 managers_data.df
+#viewing the levels
+levels(age_cate)
+nlevels(age_cate)
+#view the structure
 str(managers_data.df)
 head(managers_data.df)
-#create a summary column with total of Q1,Q2,Q3,Q4,Q5 and a new ccolumn with all 
+#create a summary column with total of Q1,Q2,Q3,Q4,Q5 and a new column with all 
 managers_data.df$mean_col <- rowMeans(managers_data.df[ , c(5,6,7,8,9)], na.rm=TRUE)
 #another method for mean
 #managers_data.df$summary <- rowMeans(x=managers_data.df[5:9])
